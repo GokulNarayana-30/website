@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Nuraeye Solutions</title>
+    <meta name="description"
+        content="AI-powered surveillance solutions for schools, colleges, and universities by Nuraeye.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="../../index.css">
+    <script src="../../js/components.js"></script>
+</head>
+
+<body>
+    <!-- Header Component -->
+    <app-header base-path="../.."></app-header>
+    <main>
+        <section class="section industry-hero-section"
+            style="height: auto; min-height: calc(100vh - 80px); margin-top: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 2rem; background: var(--bg-color); position: relative;">
+            <div class="glow glow-1"></div>
+            <div class="glow glow-2"></div>
+
+            <!-- 1. Heading -->
+            <div style="z-index: 50; position: sticky; top: 80px; width: 100vw; margin-left: calc(-50vw + 50%); text-align: center; padding: 1.25rem 0; background: rgba(10, 15, 30, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                <h1 class="section-title"
+                    style="margin-bottom: 0; text-align: center; background: linear-gradient(90deg, var(--logo-blue), var(--logo-pink)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    Education
+                </h1>
+            </div>
+
+            <!-- 2. Image Slider -->
+            <div
+                style="z-index: 2; width: 100vw; margin-left: calc(-50vw + 50%); height: auto; position: relative; margin-bottom: 2.5rem; margin-top: 2rem;">
+                <div class="hero-slider" data-slider-id="education-slider"
+                    style="position: relative; width: 100%; height: auto; overflow: hidden;">
+                    <div id="education-slider"
+                        style="display: flex; height: auto; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div style="min-width: 100%; height: auto;">
+                            <img src="../../pictures/education/ed1.png" alt="Education AI 1"
+                                style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div style="min-width: 100%; height: auto;">
+                            <img src="../../pictures/education/ed2.png" alt="Education AI 2"
+                                style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div style="min-width: 100%; height: auto;">
+                            <img src="../../pictures/education/ed3.png" alt="Education AI 3"
+                                style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <button id="education-slider-prev"
+                        style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; backdrop-filter: blur(10px); z-index: 10; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; opacity: 0.7;">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="education-slider-next"
+                        style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; backdrop-filter: blur(10px); z-index: 10; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; opacity: 0.7;">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3. Text & Demo Button -->
+            <div
+                style="z-index: 2; text-align: center; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
+                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.6; margin-bottom: 2rem;">
+                    Smart AI surveillance for schools, colleges, and universities — creating safer campuses where
+                    students and staff can thrive without worry.
+                </p>
+                <div>
+                    <a href="../../contact.html" class="btn btn-primary btn-lg">Request a Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 3rem;">
+            <div class="container">
+
+                <div class="section-header text-center" style="margin-bottom: 3rem;">
+                    <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Key Features</h2>
+                </div>
+                <div class="features-grid" style="margin-bottom: 4rem;">
+                    <div class="feature-item"><span class="material-icons-outlined">how_to_reg</span>
+                        <p>Student Attendance via Face Recognition</p>
+                    </div>
+                    <div class="feature-item"><span class="material-icons-outlined">door_front</span>
+                        <p>Smart Entry &amp; Exit Control</p>
+                    </div>
+                    <div class="feature-item"><span class="material-icons-outlined">emergency</span>
+                        <p>Unauthorised Intrusion Alerts</p>
+                    </div>
+                    <div class="feature-item"><span class="material-icons-outlined">videocam</span>
+                        <p>Classroom &amp; Campus Monitoring</p>
+                    </div>
+                    <div class="feature-item"><span class="material-icons-outlined">security</span>
+                        <p>Anti-Bullying &amp; Incident Detection</p>
+                    </div>
+                    <div class="feature-item"><span class="material-icons-outlined">directions_bus</span>
+                        <p>School Bus Tracking</p>
+                    </div>
+                    <div class="feature-item"><span class="material-icons-outlined">cloud_sync</span>
+                        <p>Centralised Multi-Campus Management</p>
+                    </div>
+                    <div class="feature-item"><span class="material-icons-outlined">notifications_active</span>
+                        <p>Real-time Instant Alerts</p>
+                    </div>
+                </div>
+                <div class="glass-panel" style="padding: 2.5rem; text-align: center;">
+                    <h2 style="font-size:1.5rem; font-weight:600; color:var(--text-pure); margin-bottom:1rem;">Make your
+                        campus safer today</h2>
+                    <p style="color:var(--text-muted); margin-bottom:2rem;">Talk to our team about a comprehensive
+                        campus safety plan.</p>
+                    <a href="../../contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Component -->
+    <app-footer base-path="../.."></app-footer>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Bullet Camera Pro | Nuraeye</title>
+    <meta name="description"
+        content="NuraEye WiFi Bullet Camera — wireless AI-powered outdoor surveillance with dual-band WiFi and EdgeAI technology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="../index.css">
+    <script src="../js/components.js"></script>
+
+    <style>
+        /* Modern UI Redesign with Inline CSS for WiFi Bullet Camera 2 */
+        :root {
+            --bg-dark: #07070a;
+            --surface-color: rgba(255, 255, 255, 0.02);
+            --surface-hover: rgba(255, 255, 255, 0.05);
+            --surface-border: rgba(255, 255, 255, 0.08);
+            --primary-cyan: #00f0ff;
+            --primary-pink: #ff007b;
+            --text-high: #ffffff;
+            --text-med: #a1a1aa;
+            --text-low: #71717a;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-med);
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 8rem 5% 4rem;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 40vw;
+            height: 40vw;
+            background: var(--primary-cyan);
+            filter: blur(200px);
+            opacity: 0.15;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: 0%;
+            width: 35vw;
+            height: 35vw;
+            background: var(--primary-pink);
+            filter: blur(180px);
+            opacity: 0.1;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1300px;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary-cyan);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-high);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn-modern {
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-cyan), #0047ff);
+            color: #000;
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0, 240, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--surface-color);
+            color: var(--text-high);
+            border: 1px solid var(--surface-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--surface-hover);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image {
+            max-width: 120%;
+            width: 600px;
+            filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.5));
+        }
+
+
+
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-high);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Interactive Card - Magic Happens Here */
+        .feature-card {
+            background: var(--surface-color) !important;
+            border: 1px solid var(--surface-border) !important;
+            border-radius: var(--radius-lg) !important;
+            padding: 2.5rem !important;
+            min-height: 340px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            text-align: left !important;
+            backdrop-filter: blur(12px) !important;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Revealing Background Image on Hover */
+        .feature-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            z-index: 0;
+            transition: opacity 0.6s ease, transform 6s linear;
+            transform: scale(1.05);
+        }
+
+        .feature-card:hover .feature-img {
+            opacity: 0.45;
+            transform: scale(1);
+        }
+
+        /* Dark overlay gradient ensures text remains readable even with bright images */
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(7, 7, 10, 0.2) 0%, rgba(7, 7, 10, 0.95) 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover .feature-content {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            color: var(--primary-cyan);
+            font-size: 2rem;
+            margin-bottom: auto;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: rgba(0, 240, 255, 0.15);
+            color: var(--primary-cyan);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Specific Pink Theme for some icons */
+        .icon-pink {
+            color: var(--primary-pink);
+        }
+
+        .feature-card:hover .icon-pink {
+            background: rgba(255, 0, 123, 0.15);
+            color: var(--primary-pink);
+            border-color: var(--primary-pink);
+            box-shadow: 0 0 20px rgba(255, 0, 123, 0.3);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            color: var(--text-high) !important;
+            background: none !important;
+            -webkit-text-fill-color: var(--text-high) !important;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .feature-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .feature-card:hover .feature-desc,
+        .feature-card:hover .feature-list li {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-cyan);
+            font-weight: bold;
+        }
+
+        .feature-card:hover .feature-list li::before {
+            color: var(--text-high);
+        }
+
+        /* Specs Section Table */
+        .specs {
+            padding: 4rem 5% 8rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .spec-container {
+            background: var(--surface-color);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 2rem 0 1rem;
+            font-size: 1.2rem;
+            color: var(--primary-cyan);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        td {
+            padding: 1.2rem 1rem;
+            color: var(--text-med);
+            vertical-align: top;
+        }
+
+        td:first-child {
+            font-weight: 500;
+            width: 40%;
+            color: var(--text-high);
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-high);
+        }
+
+        @media (max-width: 900px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                width: 100%;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Component -->
+    <app-header base-path=".."></app-header>
+
+    <main>
+        <!-- Modern Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <div class="hero-badge">Guardpro Series</div>
+                    <h1 class="hero-title">WiFi Bullet <span>Camera</span></h1>
+                    <p class="hero-description">
+                        The Nuraeye Guardpro 2MP Smart Security Camera delivers powerful AI-driven monitoring with
+                        crystal-clear 2K resolution, intelligent detection, and full-color night vision. Real-time
+                        security for homes and businesses.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#specs" class="btn-modern btn-primary">
+                            <span class="material-icons-outlined">visibility</span> View Specs
+                        </a>
+                        <a href="Nuraeye_Specifications.pdf" target="_blank" class="btn-modern btn-secondary">
+                            <i class="fas fa-file-pdf"></i> Datasheet
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <!-- Added subtle hover effect to primary product image -->
+                    <img src="../pictures/right_bullet.png" alt="Nuraeye WiFi Bullet Camera" class="hero-image"
+                        style="transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Features Section -->
+        <section class="features">
+            <div class="section-header">
+                <h2>Intelligent Features</h2>
+                <p>Hover over the features to reveal advanced imaging and AI capabilities in action.</p>
+            </div>
+
+            <div class="features-grid">
+
+                <!-- Feature 1: HD Clarity -->
+                <div class="feature-card">
+                    <img src="../pictures/features/hd_video.png" alt="HD Video" class="feature-img">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon">hd</span>
+                        <h4 class="feature-title">2 MP Ultra Full HD</h4>
+                        <p class="feature-desc">Capture every detail with 2560 × 1440 resolution. The high-performance
+                            CMOS sensor provides sharp and clear images for accurate monitoring.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2: AI Detection -->
+                <div class="feature-card">
+                    <img src="../pictures/features/ai_detection.png" alt="AI Detection Workflow" class="feature-img">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon icon-pink">psychology</span>
+                        <h4 class="feature-title">Smart AI Detection</h4>
+                        <p class="feature-desc">Intelligent AI technology detects important events in real time:</p>
+                        <ul class="feature-list">
+                            <li>Object & Motion Detection</li>
+                            <li>Person & Tracking</li>
+                            <li>Virtual line crossing & Area intrusion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Night Vision -->
+                <div class="feature-card">
+                    <img src="../pictures/features/night_vision.png" alt="Night Vision Scene" class="feature-img">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon">wb_twilight</span>
+                        <h4 class="feature-title">Color Night Vision</h4>
+                        <p class="feature-desc">Sony Starvis 2 sensor with built-in dual spotlights and 850nm IR LEDs
+                            provides clear daytime-like color visibility even in pure darkness.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Cloud Storage (Replacing generic feature card to use out created image) -->
+                <div class="feature-card">
+                    <img src="../pictures/features/secure_storage.png" alt="Secure Server Network" class="feature-img">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon icon-pink">cloud_done</span>
+                        <h4 class="feature-title">Smart Storage (1 TB)</h4>
+                        <p class="feature-desc">Flexible and secure storage architectures:</p>
+                        <ul class="feature-list">
+                            <li>Local Edge MicroSD backup</li>
+                            <li>AWS Kinesis Cloud Streaming</li>
+                            <li>128-bit AES Encrypted Data</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 5: Wide Angle -->
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon">panorama_wide_angle</span>
+                        <h4 class="feature-title">Wide Coverage</h4>
+                        <p class="feature-desc">113° diagonal FOV to monitor large areas efficiently:</p>
+                        <ul class="feature-list">
+                            <li>Focal Length: 3.18 mm</li>
+                            <li>Aperture: F1.61</li>
+                            <li>Active Blind-spot elimination</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 6: Two Way Audio -->
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon icon-pink">record_voice_over</span>
+                        <h4 class="feature-title">Two-Way Audio</h4>
+                        <p class="feature-desc">Built-in mic & speaker equipped with noise cancellation to converse with
+                            visitors or ward off intruders actively.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 7: Smart Motion Alerts -->
+                <div class="feature-card">
+                    <img src="../pictures/features/motion_alerts.png" alt="Smart Motion Alerts" class="feature-img">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon">notifications_active</span>
+                        <h4 class="feature-title">Smart Motion Alerts</h4>
+                        <p class="feature-desc">Receive instant intelligent notifications on your mobile device when
+                            suspicious activity is detected.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 8: Image Enhancement -->
+                <div class="feature-card">
+                    <img src="../pictures/features/image_enhancement.png" alt="Image Enhancement" class="feature-img">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon icon-pink">auto_awesome</span>
+                        <h4 class="feature-title">Advanced Image Enhancement</h4>
+                        <p class="feature-desc">Superior quality in difficult lighting:</p>
+                        <ul class="feature-list">
+                            <li>3D Digital Noise Reduction (3DNR)</li>
+                            <li>Wide Dynamic Range (WDR)</li>
+                            <li>AI Low-Light Image Enhancement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 9: Secure & Encrypted -->
+                <div class="feature-card">
+                    <img src="../pictures/features/secure_encrypted.png" alt="Secure Encryption" class="feature-img">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon">lock</span>
+                        <h4 class="feature-title">Secure & Encrypted</h4>
+                        <p class="feature-desc">Enterprise-grade protection:</p>
+                        <ul class="feature-list">
+                            <li>128-bit AES Encryption</li>
+                            <li>SSL/TLS secure communication</li>
+                            <li>Secure Boot Protection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 10: Built for Outdoor Use -->
+                <div class="feature-card">
+                    <img src="../pictures/features/outdoor_weather.png" alt="Outdoor Weather" class="feature-img">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon icon-pink">shield</span>
+                        <h4 class="feature-title">Built for Outdoor Use</h4>
+                        <p class="feature-desc">Rugged design for challenging environments:</p>
+                        <ul class="feature-list">
+                            <li>IP66 Weatherproof rating</li>
+                            <li>Operating temp: -20°C to 45°C</li>
+                            <li>Durable housing for outdoor installations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 11: Connectivity & Integration -->
+                <div class="feature-card">
+                    <img src="../pictures/features/connectivity_integration.png" alt="Network Connectivity"
+                        class="feature-img">
+                    <div class="feature-content">
+                        <span class="material-icons-outlined feature-icon">router</span>
+                        <h4 class="feature-title">Connectivity & Integration</h4>
+                        <p class="feature-desc">Industry-standard networking:</p>
+                        <ul class="feature-list">
+                            <li>10/100 Mbps RJ45 Ethernet port</li>
+                            <li>RTSP support for streaming</li>
+                            <li>ONVIF compatibility with NVR systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Redesigned Tech Specs -->
+        <section id="specs" class="specs">
+            <div class="section-header">
+                <h2>Technical Specifications</h2>
+            </div>
+
+            <div class="spec-container">
+                <table>
+                    <tr>
+                        <th colspan="2">Camera & Vision</th>
+                    </tr>
+                    <tr>
+                        <td>Image Sensor</td>
+                        <td>1/3" Progressive Scan CMOS Sensor</td>
+                    </tr>
+                    <tr>
+                        <td>Lens Details</td>
+                        <td>Focal Length: 3.18mm | Aperture: F1.61<br>FOV: 113°(Diagonal), 97°(H), 54°(V)</td>
+                    </tr>
+                    <tr>
+                        <td>Night Vision Lighting</td>
+                        <td>850 nm IR LED<br>2× Built-in Spotlights (Color Night Vision)</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2">Video & Audio</th>
+                    </tr>
+                    <tr>
+                        <td>Resolution & Frame Rate</td>
+                        <td>2560 × 1440 px @ 30fps</td>
+                    </tr>
+                    <tr>
+                        <td>Video Compression</td>
+                        <td>H.264 / H.265 / MJPEG</td>
+                    </tr>
+                    <tr>
+                        <td>Image Enhancement</td>
+                        <td>3D Digital Noise Reduction (3DNR), Wide Dynamic Range (WDR)</td>
+                    </tr>
+                    <tr>
+                        <td>Audio Capabilities</td>
+                        <td>Two-Way Audio with active Noise Cancellation</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2">System Integration</th>
+                    </tr>
+                    <tr>
+                        <td>Network & Intelligence</td>
+                        <td>10/100 Mbps RJ45 | RTSP & ONVIF Supported <br> AI Face/Object Detection & Tracking</td>
+                    </tr>
+                    <tr>
+                        <td>Security Framework</td>
+                        <td>128-bit AES Encryption with SSL/TLS | Secure Boot</td>
+                    </tr>
+                    <tr>
+                        <td>Environmental Rating</td>
+                        <td>IP66 Weather Resistance | Temp: -20°C to 45°C</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Component -->
+    <app-footer base-path=".."></app-footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
